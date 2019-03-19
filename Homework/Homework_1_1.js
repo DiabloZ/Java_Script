@@ -2,6 +2,7 @@ $(document).ready(function(){
 	getValue();
 	
 });
+//Вышеописанная функция работает по готовности.
 
 function getValue(){
 	$.get(
@@ -10,7 +11,10 @@ function getValue(){
 			data = JSON.parse(data);
 			console.log(data);
 			
-			var Rub = prompt("Введите необходимую сумму - ");
+			var Rub = document.getElementById("rubInput").value;
+			var val = Rub.value;
+			alert("Вы ввели - " + Rub);
+			//var Rub = prompt("Введите необходимую сумму - ");
 			var Usd = (data['Valute']['USD']['Value']);
 			var Eur = (data['Valute']['EUR']['Value']);
 			var sumEur = parseFloat((Rub / Eur).toFixed(2));
