@@ -8,6 +8,7 @@ function getValue(){
 		function(data){
 			data = JSON.parse(data);
 			console.log(data);
+			alert(data['Valute']['USD']['Value']);
 	}
 	);
 	
