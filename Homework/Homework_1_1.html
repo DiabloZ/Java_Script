@@ -7,10 +7,10 @@
 
 	Введите необходимую сумму в рублях -<br>
 	<input type="number" id="rubInput"><br>
-	<input type="button" id="inject" value="Ввод">
+	<input type="button" id="input" value="Ввод">
 		
 	<script>
-		inject.onclick = getValue;
+		input.onclick = getValue;
 		function getValue(){
 			var x = new XMLHttpRequest();
 			x.open("GET", "https://www.cbr-xml-daily.ru/daily_json.js", true);
