@@ -1,9 +1,32 @@
-<meta charset="utf-8">
-<script>
+<head>
+	<meta charset="utf-8">
+	<title>Расчёт трапеции</title>
+</head>
 
-	alert("Привет, мир")
-
-</script>
-
-//2. Подсчет площади трапеции.
-//Пользователь вводит длину оснований трапеции (a и b), а также высоту трапеции h. Программа выводит сообщение: «Площадь трапеции будет равна <значение>». Площадь вычисляется по формуле ((a + b) / 2) * h, где a, b - основания, h - высота.
+<body>
+	Введите длину основания трапеции "a" -<br>
+	<input type="number" id="a-lenght"><br>
+	Введите длину основания трапеции "b" -<br>
+	<input type="number" id="b-lenght"><br>
+	Введите высоту основания трапеции "h" -<br>
+	<input type="number" id="h-lenght"><br>	
+	<input type="button" id="input" value="Ввод">
+		
+	<script>
+		input.onclick = getValue;
+		function getValue(){
+		
+			var a = document.getElementById("a-lenght").value;
+			var b = document.getElementById("b-lenght").value;
+			var h = document.getElementById("h-lenght").value;
+			
+			a = parseInt(a);
+			b = parseInt(b);
+			h = parseInt(h);
+			
+			var square = ((a + b)/ 2) * h;
+			
+			alert ("Площадь трапеции будет равна: " + square + " м²");
+		}
+	</script>
+</body>
