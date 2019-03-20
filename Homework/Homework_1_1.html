@@ -1,0 +1,39 @@
+<head>
+	<meta charset="utf-8">
+	<title>Конвертор валюты</title>
+</head>
+
+<body>
+
+	Введите необходимую сумму в рублях -<br>
+	<input type="number" id="rubInput"><br>
+	<input type="button" id="input" value="Ввод">
+		
+	<script>
+		input.onclick = getValue;
+		function getValue(){
+			var x = new XMLHttpRequest();
+			x.open("GET", "https://www.cbr-xml-daily.ru/daily_json.js", true);
+			x.onload = function (){
+				data = (x.responseText);
+				data = JSON.parse(data);
+				console.log(data);
+				
+				var Rub = document.getElementById("rubInput").value;
+				var val = Rub.value;
+				var Eur = (data['Valute']['EUR']['Value']);
+				var Usd = (data['Valute']['USD']['Value']);
+				var sumEur = parseFloat((Rub / Eur).toFixed(2));
+				var sumUsd = parseFloat((Rub / Usd).toFixed(2));
+				
+				alert("Вы ввели - " + Rub + " ₽");
+				alert ("В пересчёте на евро будет - " + sumEur + " €");			
+				alert ("В пересчёте на доллары будет - " + sumUsd + " $");
+				alert ("Актуальные данные получены с сайта Центрального банка России");
+			}
+			x.send(null);
+		}
+	</script>
+
+</body>
+
