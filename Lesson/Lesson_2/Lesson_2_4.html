@@ -1,1 +1,24 @@
-﻿
+﻿<meta charset="utf-8">
+<script type="text/javascript">
+
+    var compAnswer = parseInt(Math.random() * 100);
+    var userAnswer = +prompt("Угадайте число от 0 до 100");
+    var maxTryCount = 2;
+
+    for (var tryCount = 1; tryCount < maxTryCount; tryCount++) {
+        if (userAnswer == compAnswer) {
+            alert("Поздравляю, вы угадали!");
+            break;
+            //continue; - переходим к следующей итерации
+        } else if (userAnswer > compAnswer) {
+            alert("Вы ввели слишком большое число");
+        } else if (userAnswer < compAnswer) {
+            alert("Вы ввели слишком малое число");
+        }
+
+        var userAnswer = +prompt("Попробуйте ещё раз. Введите число от 0 до 100 \n У вас осталось " + (maxTryCount - tryCount) + " попыток");
+    }
+    if (tryCount == maxTryCount)
+        alert("Вы проиграли \nПравильный ответ: " + compAnswer);
+   
+</script>
