@@ -1,0 +1,46 @@
+﻿<meta charset="utf-8">
+<script type="text/javascript">
+    var riddleOne = "Один брат — ест и голодает, а другой — идёт и пропадает.";
+    var answerOne_1 = "Огонь и дым";
+    var answerOne_2 = "огонь и дым";
+    var answerOne_3 = "Дым и огонь";
+    var answerOne_4 = "дым и огонь";
+    var riddleTwo = "Какое колесо не крутится при правом развороте ?";
+    var answerTwo_1 = "Год";
+    var answerTwo_2 = "год";
+    var riddleThree = "От головы до хвоста 12 м, а от хвоста до головы 0 м.Что это ?";
+    var answerThree_1 = "Запасное.";
+    var answerThree_2 = "запасное.";
+    var score = s;
+
+    var userAnswerOne = prompt(riddleOne);
+    if ((userAnswerOne == answerOne_1) || (userAnswerOne == answerOne_2)  || (userAnswerOne == answerOne_3) || (userAnswerOne == answerOne_4)) ) {
+        alert("Поздравляю, вы угадали!");
+        s++;
+    }   
+        
+
+
+
+
+
+</script>
+    var compAnswer = parseInt(Math.random() * 100);
+    var userAnswer = +prompt("Угадайте число от 0 до 100");
+    var maxTryCount = 2;
+
+    for (var tryCount = 1; tryCount < maxTryCount; tryCount++) {
+        if (userAnswer == compAnswer) {
+            alert("Поздравляю, вы угадали!");
+            break;
+            //continue; - переходим к следующей итерации
+        } else if (userAnswer > compAnswer) {
+            alert("Вы ввели слишком большое число");
+        } else if (userAnswer < compAnswer) {
+            alert("Вы ввели слишком малое число");
+        }
+
+        var userAnswer = +prompt("Попробуйте ещё раз. Введите число от 0 до 100 \n У вас осталось " + (maxTryCount - tryCount) + " попыток");
+    }
+    if (tryCount == maxTryCount)
+        alert("Вы проиграли \nПравильный ответ: " + compAnswer);
