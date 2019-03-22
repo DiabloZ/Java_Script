@@ -1,17 +1,14 @@
 ﻿<meta charset="utf-8">
 <script type="text/javascript">
+    do{
+        var n = +prompt("Пожалуйста, введите положительное число");
+    } while (isNaN(n) || n < 0)
 
-	var n = +prompt("Пожалуйста, введите число");
-	
-	if(isNaN(n)|| n < 0){
-		document.write("Нужно было ввести положительное число");
-	} else {
-			
-		var sum = 0;
-		for(var i = 0; i <= n; i++){
-			sum = sum + i; // sum +=i;
-			document.write(i + " " + sum + "<br>");
-		}
-	}	
-	 
+	var sum = 0;
+	for(var i = 0; i <= n; i++){
+		sum = sum + i; // sum +=i;
+		//document.write(i + " " + sum + "<br>");
+	}
+    document.write(sum)
+
 </script>
