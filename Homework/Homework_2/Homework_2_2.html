@@ -1,72 +1,56 @@
 ﻿<meta charset="utf-8">
 <script type="text/javascript">
-    var riddleOne = "Один брат — ест и голодает, а другой — идёт и пропадает.";
-    var answerOne_1 = "Огонь и дым";
-    var answerOne_2 = "огонь и дым";
-    var answerOne_3 = "Дым и огонь";
-    var answerOne_4 = "дым и огонь";
-    var riddleTwo = "Какое колесо не крутится при правом развороте ?";
-    var answerTwo_1 = "Запасное";
-    var answerTwo_2 = "запасное";
-    var riddleThree = "От головы до хвоста 12 м, а от хвоста до головы 0 м.Что это ?";
-    var answerThree_1 = "Год";
-    var answerThree_2 = "год";
-    var riddleFour = "Если ты стараешься и делаешь всю домашку, то ты - ";
-    var answerFour_1 = "Молодец";
-    var answerFour_2 = "молодец";
-    var answerFour_3 = "Красавелла";
-    var answerFour_4 = "красавелла";
-    var answerFour_5 = "Умница";
-    var answerFour_6 = "умница";
-    var answerFour_7 = "Будущий программист";
-    var answerFour_8 = "будущий программист";
-    var score = 0;
-    var scoreMultiply = 10;
 
-    alert("В этой игре 4 вопроса и максимальный балл - 40. Удачи!");
+    var valueOneYear;
+    var valueTwoYear;
+    var valueThreeYear;
+    var valueFourYear;
+    var valueFiveYear;
+    var overpaymentOne;
+    var overpaymentTwo;
+    var overpaymentThree;
+    var overpaymentFour;
+    var overpaymentFive;
+    var percent = 0.01;
+    var year = 0;
+    var sum = 0;
 
-    var userAnswerOne = prompt(riddleOne);
-    if ((userAnswerOne == answerOne_1) || (userAnswerOne == answerOne_2) || (userAnswerOne == answerOne_3) || (userAnswerOne == answerOne_4)) {
-        alert("Поздравляю, вы угадали!");
-        score = score + 1;
-    } else {
-        alert("Ну ничего, ещё две загадки, вероятно угадаешь!")
-    }
+  do{
+        var valueRub = +prompt ("Введите сумму цифрами");
+    } while (isNaN(valueRub) || valueRub < 0)
 
-    var userAnswerTwo = prompt(riddleTwo);
-    if ((userAnswerTwo == answerTwo_1) || (userAnswerTwo == answerTwo_2)) {
-        alert("Поздравляю, вы угадали!");
-        score = score + 1;
-    } else {
-        alert("Соберись, у тебя всё получится!")
-    }
-
-    var userAnswerThree = prompt(riddleThree);
-    if ((userAnswerThree == answerThree_1) || (userAnswerThree == answerThree_2)) {
-        alert("Поздравляю, вы угадали!");
-        score = score + 1;
-    } else {
-        alert("Ты всё равно молодец.")
-    }
-
-    var userAnswerFour = prompt(riddleFour);
-    if ((userAnswerFour == answerFour_1) || (userAnswerFour == answerFour_2) || (userAnswerFour == answerFour_3) || (userAnswerFour == answerFour_4) || (userAnswerFour == answerFour_5) || (userAnswerFour == answerFour_6) || (userAnswerFour == answerFour_7) || (userAnswerFour == answerFour_8)) {
-        alert("Поздравляю, вы угадали!");
-        score = score + 1;
-    } else {
-        alert("Как же так? Ты же знаешь, что ты как минимум - молодец!")
-    }
+   do{
+        var valuePerc = +prompt ("Введите процент целыми числами");
+    } while (isNaN(valuePerc) || valuePerc < 0)       
+        
+    
 
 
-    if (score == 1) {
-        alert("Поздравляем, вы правильно угадали " + score + " загадку.\nУ вас " + (score * scoreMultiply) + " баллов");
-    } else if (score > 1) {
-        alert("Поздравляем, вы правильно угадали " + score + " загадки.\nУ вас " + (score * scoreMultiply) + " баллов");
-    } else {
-        alert("Вся прелесть циклов в том, что можно попробовать ещё раз.\nНе вешай нос, попробуй ещё раз.\n(Или будь хитрее, погляди код, читер ;)");
-    }
+
+    var valueOneYear = parseFloat(((valueRub * (valuePerc * percent)) + valueRub).toFixed(2));
+    var overpaymentOne = (valueOneYear - valueRub).toFixed(2);
+    year++
+    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueOneYear + " рублей\nПереплата составит - " + overpaymentOne + " рублей.");
+
+    var valueTwoYear = parseFloat(((valueOneYear * (valuePerc * percent)) + valueOneYear).toFixed(2));
+    var overpaymentTwo = (valueTwoYear - valueRub).toFixed(2);
+    year++
+    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + 
+        valueTwoYear + " рублей\nПереплата составит - " + overpaymentTwo + " рублей.");
+
+    var valueThreeYear = parseFloat(((valueTwoYear * (valuePerc * percent)) + valueTwoYear).toFixed(2));
+    var overpaymentThree = (valueThreeYear - valueRub).toFixed(2);
+    year++
+    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueThreeYear + " рублей\nПереплата составит - " + overpaymentThree + " рублей.");
+
+    var valueFourYear = parseFloat(((valueThreeYear * (valuePerc * percent)) + valueThreeYear).toFixed(2));
+    var overpaymentFour = (valueFourYear - valueRub).toFixed(2);
+    year++
+    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueFourYear + " рублей\nПереплата составит - " + overpaymentFour + " рублей.");
+
+    var valueFiveYear = parseFloat(((valueFourYear * (valuePerc * percent)) + valueFourYear).toFixed(2));
+    var overpaymentFive = (valueFiveYear - valueRub).toFixed(2);
+    year++
+    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueFiveYear + " рублей\nПереплата составит - " + overpaymentFive + " рублей.");
 
 </script>
-
-2. Банковская программа.
-Пользователь вводит сумму вклада и процент, который будет начисляться ежегодно. Отобразить размер вклада поочередно на ближайшие 5 лет.
