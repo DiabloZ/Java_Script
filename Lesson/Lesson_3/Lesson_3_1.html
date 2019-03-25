@@ -1,4 +1,35 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 
+	var numbers = [45, 48, 92, 75, 36];
+	
+	alert("Запомните порядок числа и их порядок: " + numbers);
+	
+	var userAnswer = +prompt("Каким было первое число?");
+	alert(numbers[0]);
+	if (userAnswer == numbers[0]){
+		alert("Всё верно!");
+	} else {
+		alert("Не верно. Правильный ответ " + numbers[0]);
+	}
+
+	var userAnswer = +prompt("А каким последнее?");
+	alert(numbers.length);
+	alert(numbers[numbers.length - 1])
+	if (userAnswer == numbers[numbers.length - 1]){
+		alert("Всё верно!");
+	} else {
+		alert("Не верно. Правильный ответ " + numbers[numbers.length - 1]);
+	}
+
+	var n = parseInt(Math.random() * numbers.length);
+	var userAnswer = +prompt("А каким было число под номером " + (n + 1) + "?");
+	alert(numbers[n]);
+
+	if (userAnswer == numbers[n]){
+		alert("Всё верно!");
+	} else {
+		alert("Не верно. Правильный ответ " + numbers[n]);
+	}
+
 </script>
