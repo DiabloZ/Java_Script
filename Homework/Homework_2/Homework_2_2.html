@@ -1,17 +1,31 @@
 ﻿<meta charset="utf-8">
 <script type="text/javascript">
-
-    var year = 0;
-
+       
   do{
         var valueRub = +prompt ("Введите сумму цифрами");
     } while (isNaN(valueRub) || valueRub < 0)
 
    do{
         var valuePerc = +prompt ("Введите процент целыми числами");
-    } while (isNaN(valuePerc) || valuePerc < 0)       
-    var valuePerc = valuePerc * 0.01;
+    } while (isNaN(valuePerc) || valuePerc < 0)
 
+    var result = "Кредитный калькулятор\n";
+    var overpayment = 0;
+    var valueRubPlusYear = 0;
+    var valuePerc = valuePerc * 0.01;
+    valueRubStorage = valueRub;
+
+    for (var i = 1; i <= 5; i++) {
+        valueRubPlusYear = valueRub + (valueRub * valuePerc);
+        var overpayment = valueRubPlusYear - valueRubStorage;
+
+        result += "Занятая сумма " + parseFloat(valueRubStorage).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + i + " год вырастет до - " + parseFloat(valueRubPlusYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.\n";
+        valueRub = valueRubPlusYear;
+    }
+    alert(result);
+
+
+    /*
     var valueOneYear = ((valueRub * valuePerc) + valueRub);
     var overpayment = valueOneYear - valueRub;
     year++
@@ -35,6 +49,6 @@
     var valueFiveYear = ((valueFourYear * valuePerc) + valueFourYear);
     var overpayment = valueFiveYear - valueRub;
     year++
-    alert("Занятая сумма " + parseFloat(valueRub).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + year + " год вырастет до - " + parseFloat(valueFiveYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.");
+    alert("Занятая сумма " + parseFloat(valueRub).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + year + " год вырастет до - " + parseFloat(valueFiveYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.");*/
 
 </script>
