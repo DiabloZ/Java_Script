@@ -1,19 +1,7 @@
 ﻿<meta charset="utf-8">
 <script type="text/javascript">
 
-    var valueOneYear;
-    var valueTwoYear;
-    var valueThreeYear;
-    var valueFourYear;
-    var valueFiveYear;
-    var overpaymentOne;
-    var overpaymentTwo;
-    var overpaymentThree;
-    var overpaymentFour;
-    var overpaymentFive;
-    var percent = 0.01;
     var year = 0;
-    var sum = 0;
 
   do{
         var valueRub = +prompt ("Введите сумму цифрами");
@@ -22,35 +10,31 @@
    do{
         var valuePerc = +prompt ("Введите процент целыми числами");
     } while (isNaN(valuePerc) || valuePerc < 0)       
-        
-    
+    var valuePerc = valuePerc * 0.01;
 
-
-
-    var valueOneYear = parseFloat(((valueRub * (valuePerc * percent)) + valueRub).toFixed(2));
-    var overpaymentOne = (valueOneYear - valueRub).toFixed(2);
+    var valueOneYear = ((valueRub * valuePerc) + valueRub);
+    var overpayment = valueOneYear - valueRub;
     year++
-    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueOneYear + " рублей\nПереплата составит - " + overpaymentOne + " рублей.");
+    alert("Занятая сумма " + parseFloat(valueRub).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + year + " год вырастет до - " + parseFloat(valueOneYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.");
 
-    var valueTwoYear = parseFloat(((valueOneYear * (valuePerc * percent)) + valueOneYear).toFixed(2));
-    var overpaymentTwo = (valueTwoYear - valueRub).toFixed(2);
+    var valueTwoYear = ((valueOneYear * valuePerc) + valueOneYear);
+    var overpayment = valueTwoYear - valueRub;
     year++
-    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + 
-        valueTwoYear + " рублей\nПереплата составит - " + overpaymentTwo + " рублей.");
+    alert("Занятая сумма " + parseFloat(valueRub).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + year + " год вырастет до - " + parseFloat(valueTwoYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.");
 
-    var valueThreeYear = parseFloat(((valueTwoYear * (valuePerc * percent)) + valueTwoYear).toFixed(2));
-    var overpaymentThree = (valueThreeYear - valueRub).toFixed(2);
+    var valueThreeYear = ((valueTwoYear * valuePerc) + valueTwoYear);
+    var overpayment = valueThreeYear - valueRub;
     year++
-    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueThreeYear + " рублей\nПереплата составит - " + overpaymentThree + " рублей.");
+    alert("Занятая сумма " + parseFloat(valueRub).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + year + " год вырастет до - " + parseFloat(valueThreeYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.");
 
-    var valueFourYear = parseFloat(((valueThreeYear * (valuePerc * percent)) + valueThreeYear).toFixed(2));
-    var overpaymentFour = (valueFourYear - valueRub).toFixed(2);
+    var valueFourYear = ((valueThreeYear * valuePerc) + valueThreeYear);
+    var overpayment = (valueFourYear - valueRub).toFixed(2);
     year++
-    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueFourYear + " рублей\nПереплата составит - " + overpaymentFour + " рублей.");
+    alert("Занятая сумма " + parseFloat(valueRub).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + year + " год вырастет до - " + parseFloat(valueFourYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.");
 
-    var valueFiveYear = parseFloat(((valueFourYear * (valuePerc * percent)) + valueFourYear).toFixed(2));
-    var overpaymentFive = (valueFiveYear - valueRub).toFixed(2);
+    var valueFiveYear = ((valueFourYear * valuePerc) + valueFourYear);
+    var overpayment = valueFiveYear - valueRub;
     year++
-    alert("Занятая сумма " + valueRub + " под " + valuePerc + "%" + " за " + year + " год вырастет до - " + valueFiveYear + " рублей\nПереплата составит - " + overpaymentFive + " рублей.");
+    alert("Занятая сумма " + parseFloat(valueRub).toFixed(2) + " под " + parseFloat(valuePerc).toFixed(2) + "%" + " за " + year + " год вырастет до - " + parseFloat(valueFiveYear).toFixed(2) + " рублей\nПереплата составит - " + parseFloat(overpayment).toFixed(2) + " рублей.");
 
 </script>
