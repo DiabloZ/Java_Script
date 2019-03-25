@@ -1,24 +1,16 @@
 ﻿<meta charset="utf-8">
 <script type="text/javascript">
     var riddleOne = "Один брат — ест и голодает, а другой — идёт и пропадает.";
-    var answerOne_1 = "Огонь и дым";
     var answerOne_2 = "огонь и дым";
-    var answerOne_3 = "Дым и огонь";
     var answerOne_4 = "дым и огонь";
     var riddleTwo = "Какое колесо не крутится при правом развороте ?";
-    var answerTwo_1 = "Запасное";
     var answerTwo_2 = "запасное";
     var riddleThree = "От головы до хвоста 12 м, а от хвоста до головы 0 м.Что это ?";
-    var answerThree_1 = "Год";
     var answerThree_2 = "год";
     var riddleFour = "Если ты стараешься и делаешь всю домашку, то ты - ";
-    var answerFour_1 = "Молодец";
     var answerFour_2 = "молодец";
-    var answerFour_3 = "Красавелла";
     var answerFour_4 = "красавелла";
-    var answerFour_5 = "Умница";
     var answerFour_6 = "умница";
-    var answerFour_7 = "Будущий программист";
     var answerFour_8 = "будущий программист";
     var score = 0;
     var scoreMultiply = 10;
@@ -26,33 +18,37 @@
     alert("В этой игре 4 вопроса и максимальный балл - 40. Удачи!");
 
     var userAnswerOne = prompt(riddleOne);
-    if ((userAnswerOne == answerOne_1) || (userAnswerOne == answerOne_2) || (userAnswerOne == answerOne_3) || (userAnswerOne == answerOne_4)) {
+    userAnswerOne = userAnswerOne.toLowerCase();
+    if ((userAnswerOne == answerOne_2)  || (userAnswerOne == answerOne_4)) {
         alert("Поздравляю, вы угадали!");
-        score = score + 1;
+        score++;
     } else {
         alert("Ну ничего, ещё две загадки, вероятно угадаешь!")
     }
 
     var userAnswerTwo = prompt(riddleTwo);
-    if ((userAnswerTwo == answerTwo_1) || (userAnswerTwo == answerTwo_2)) {
+    userAnswerTwo = userAnswerTwo.toLowerCase();
+    if (userAnswerTwo == answerTwo_2) {
         alert("Поздравляю, вы угадали!");
-        score = score + 1;
+        score++;
     } else {
         alert("Соберись, у тебя всё получится!")
     }
 
     var userAnswerThree = prompt(riddleThree);
-    if ((userAnswerThree == answerThree_1) || (userAnswerThree == answerThree_2)) {
+    userAnswerThree = userAnswerThree.toLowerCase();
+    if (userAnswerThree == answerThree_2) {
         alert("Поздравляю, вы угадали!");
-        score = score + 1;
+        score++;
     } else {
         alert("Ты всё равно молодец.")
     }
 
     var userAnswerFour = prompt(riddleFour);
-    if ((userAnswerFour == answerFour_1) || (userAnswerFour == answerFour_2) || (userAnswerFour == answerFour_3) || (userAnswerFour == answerFour_4) || (userAnswerFour == answerFour_5) || (userAnswerFour == answerFour_6) || (userAnswerFour == answerFour_7) || (userAnswerFour == answerFour_8)) {
+    userAnswerFour = userAnswerFour.toLowerCase();
+    if ((userAnswerFour == answerFour_2) || (userAnswerFour == answerFour_4) || (userAnswerFour == answerFour_6) || (userAnswerFour == answerFour_8)) {
         alert("Поздравляю, вы угадали!");
-        score = score + 1;
+        score++;
     } else {
         alert("Как же так? Ты же знаешь, что ты как минимум - молодец!")
     }
