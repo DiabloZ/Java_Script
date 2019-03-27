@@ -1,0 +1,73 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+/*	
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+		// какие-то команды ,которые уже не выполнятся.
+	}
+	
+	function max(a, b){
+		if (a >= b){
+			return a;
+		} else {
+			return b;
+		}
+	
+	}
+	
+	function factorial(n){
+	
+		var result = 1;
+		for(var i = 1; i <= n; i++){
+			result = result * i;
+		}
+		
+		return result;
+	}
+	
+	var f = factorial(5);
+	var a = max (35, 70);
+	var c = max (a, 95) +4;
+	var n = getRandomNumber(100);
+	var m = getRandomNumber(4);
+*/	
+	
+	function compareAnswers(userAnswer, answer){
+		if (userAnswer == answer){
+			alert("Всё верно!");
+		} else {
+			alert("Не верно. Правильный ответ " + answer);
+		}
+	}
+	//генерируем массив случайных чисел.
+
+	
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+	
+	function geterateRandomNumberArray(length){
+		var numbers = [];
+		
+		for(var i = 0; i < length; i++){
+			var randomNumbers = getRandomNumber(100);
+			numbers.push(randomNumbers);
+		}
+		
+		return numbers;
+	}
+		var numbers = geterateRandomNumberArray(5)
+	
+	alert("Запомните порядок числа и их порядок: " + numbers);
+	
+	var userAnswer = +prompt("Каким было первое число?");
+	compareAnswers(userAnswer, numbers[0]);
+
+	var userAnswer = +prompt("А каким последнее?");
+	compareAnswers(userAnswer, numbers[numbers.length - 1]);
+
+	var n = parseInt(getRandomNumber(numbers.length - 1));
+	var userAnswer = +prompt("А каким было число под номером " + (n + 1) + "?");
+	compareAnswers(userAnswer, numbers[n]);
+
+</script>
