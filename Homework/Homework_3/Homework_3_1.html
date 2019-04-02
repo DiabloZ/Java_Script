@@ -1,4 +1,76 @@
 ﻿<meta charset="utf-8">
 <script type="text/javascript">
+  
+
+  
+function returnValue (){
+	  for(var i = 1; i <= returnCount; i++){
+		var randomNumbers = i;
+		valueStorage.push(randomNumbers);
+	  }
+	document.write("<br>Массив - " + valueStorage);
+}
    
-</script>
+    
+function arrayMath(arr){
+	while ((Object.keys(arr).length) > 1){
+	  var arrTime = arr[0] + arr[1];
+	  arr.shift();
+	  arr.shift();
+	  arr.unshift(arrTime);
+	 // var arrConter =  Object.keys(arr).length;
+	 // if(1>=arrConter)break;
+	 }
+	 document.write("<br>Сумма массива " + arr);
+}
+
+function maxValue(valueMax){
+	var a = Math.max.apply(null, valueMax);
+	document.write("<br>Большее число в массиве - " + a);
+}
+
+function minValue(valueMin){
+	var b = Math.min.apply(null, valueMin);
+	document.write("<br>Меньшее число в массиве - " + b);
+}
+
+function evenNumbers(value){
+	for(var w = 0; w <= (Object.keys(value).length); w++){
+		if((value[w]) % 2 == 0){
+			document.write("<br> " + value[w]);
+			// вывод не успеваю довести до ума, уже надо бежать.
+		}
+	}
+	
+}
+
+
+
+
+	var valueStorage = [];
+	var returnCount = 10;
+	returnValue();
+	var valueMath = valueStorage.slice();
+	var valueMin = valueStorage.slice();
+	var valueMax = valueStorage.slice();
+	var numbers = valueStorage.slice();
+
+	arrayMath (valueMath);
+	minValue(valueMin);
+	maxValue(valueMax);
+	evenNumbers(numbers);
+	console.log(valueMath);
+	console.log(valueMin);
+	console.log(valueMax);
+
+
+	
+	
+//f. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает только четные числа из этого массива. Чтобы определить четность числа, воспользуйтесь оператором для подсчета остатка от деления: x % 2. Если остаток от деления числа на 2 равен 0, число будет четное.
+   
+  </script>
+  
+  
+
+
+
