@@ -1,0 +1,55 @@
+﻿<meta charset="utf-8">
+<script type="text/javascript">
+
+    var riddle = [
+		["Один брат — ест и голодает, а другой — идёт и пропадает."],
+		["Какое колесо не крутится при правом развороте ?"],
+		["От головы до хвоста 12 м, а от хвоста до головы 0 м.Что это ?"],
+		["Если ты стараешься и делаешь всю домашку, то ты - "],
+	];
+	var answer = [
+		["огонь и дым", "дым и огонь"],
+		["запасное"],
+		["год"],
+		["молодец", "красавелла", "умница", "будущий программист"],
+	];
+	var support = [
+		["Ну ничего, ещё три загадки, вероятно угадаешь!"],
+		["Соберись, у тебя всё получится!"],
+		["Ты всё равно молодец."],
+		["Как же так? Ты же знаешь, что ты как минимум - молодец!"],
+	];
+	
+    var score = 0;
+    var scoreMultiply = 10;
+    alert("В этой игре 4 вопроса и максимальный балл - 40. Удачи!");
+	var i = 0
+
+	function compareAnswers(userAnswer, answer){
+	
+		
+		userAnswer = userAnswer.toLowerCase();
+		if ((userAnswer == (answer[i][0])) || (userAnswer == (answer[i][1])) || (userAnswer == (answer[i][2])) || (userAnswer == (answer[i][3]))) {
+			alert("Поздравляю, вы угадали!");
+			score++;
+			return;
+		} else {
+			alert(support[i])
+		}
+		
+	}
+	
+	for(var i = 0; i < riddle.length; i++){
+	var userAnswer = prompt(riddle[i]);
+	compareAnswers(userAnswer, answer);
+	}
+	
+	if (score == 1) {
+        alert("Поздравляем, вы правильно угадали " + score + " загадку.\nУ вас " + (score * scoreMultiply) + " балл");
+    } else if (score > 1){
+        alert("Поздравляем, вы правильно угадали " + score + " загадки.\nУ вас " + (score * scoreMultiply) + " баллов");
+    } else {
+        alert("Вся прелесть циклов в том, что можно попробовать ещё раз.\nНе вешай нос, попробуй ещё раз.\n(Или будь хитрее, погляди код, читер ;)");
+    }
+	
+</script>

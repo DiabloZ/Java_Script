@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var leters = [
+	["ф", "а"],
+	["ы", "в"],
+	["о", "ж"],
+	];
+	var levelMassage = [
+	["Положите 4 пальца левой руки - мизиец, безымянный, средний и указательный - на клавиши ф, ы, в, а. Запомните, что буква А находится под вашим указательным пальцем, а Ф - под мизинцем.\nТеперь неспеша наберите текст. Постарайтесь не смотреть на клавиатуру. "],
+	["Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной"],
+	["Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний -— на Л, указательный — на О. Запомните расположение пальцев"],
+	]
+	var w = 0;
+	length = 10;
+	
+	
+	function generateText(lettersCounter, lengthCounter){
+		var text = "";
+		for (var i = 0; i < lengthCounter; i++){
+			var n = getRandomNumber(lettersCounter.length - 1);
+			text = text + lettersCounter[n];
+		}
+		return text;
+	}
+	
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+	
+	function level (leters){
+		while(true){
+			alert(levelMassage[w]);
+			var text = generateText((leters[w]), length);
+			var userText = prompt(text);
+			if (userText == text){
+				alert("Всё верно!");
+				w++
+				break;
+			} else {
+				alert("Вы ошиблись. Попробуйте ещё раз.");
+			}
+		}
+	}
+	
+	for(var i = 0; i < leters.length; i++){
+	level (leters);
+	}
+	alert ("Поздравляю! Вы справились с заданием и я тоже :).")
+</script>
